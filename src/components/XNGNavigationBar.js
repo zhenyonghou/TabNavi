@@ -2,13 +2,14 @@
  * Created by mumuhou on 16/6/24.
  */
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes} from 'react';
 import {
   View,
   Image,
   Text,
   TouchableOpacity,
-  StyleSheet
+  StyleSheet,
+  Platform
 } from 'react-native';
 
 export default class XNGNavigationBar extends Component {
@@ -68,11 +69,13 @@ export default class XNGNavigationBar extends Component {
   }
 }
 
+let BAR_HEIGHT = (Platform.OS === 'ios') ? 64 : 44
+
 var styles = StyleSheet.create({
   container: {
-    paddingTop: 20,
+    paddingTop: (Platform.OS === 'ios') ? 20 : 0,
     flexDirection: 'row',
-    height: 64,
+    height: (Platform.OS === 'ios') ? 64 : 44,
     shadowOffset: {
       width: 1,
       height: 0.5,
