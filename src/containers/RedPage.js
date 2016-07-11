@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
+  Navigator,
   StyleSheet
 } from 'react-native';
 import XNGNavigationBar from '../components/XNGNavigationBar';
@@ -20,6 +21,7 @@ export default class RedPage extends Component {
     console.log('handleTouchedRightButton');
     this.props.navigator.push({
       component: BlackPage,
+      sceneConfig: Navigator.SceneConfigs.FloatFromBottom,
     });
   }
 
